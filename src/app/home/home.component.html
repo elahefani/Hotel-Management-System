@@ -1,0 +1,221 @@
+<body>
+    <div class="main">
+        <div class="contain-head">
+            <div class="left-head">
+                <p style="font-size: 25px; color: white;">Booking Hotel</p>
+            </div>
+            <div class="center-head">
+                <nav class="navbar navbar-expand-sm">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><mat-icon>home</mat-icon> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/showhotel"><mat-icon>hotel</mat-icon>Rooms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/boxreserve"><mat-icon>inbox</mat-icon>Reserve</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mailto:elahefani5@gmail.com" matTooltip="elahefani5@gmail.com" >
+                                <mat-icon>contact_support</mat-icon>Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="right-head">
+                <button type="submit" mat-fab extended class="signlog" (click)="goToLogin()">Sign up/Log in</button>
+                <a class="profile-button" href="/profile"><mat-icon class="account_circle">account_circle</mat-icon></a>
+            </div>
+        </div>
+
+        <div class="calendar-container">
+            <mat-form-field class="sort-option">
+                <mat-select placeholder="Fillter Resault" (selectionChange)="sortHotels($event.value)">
+                    <mat-option value="stars">Hotel Stars</mat-option>
+                    <mat-option value="rates">Hotel Rate</mat-option>
+                    <mat-option value="reserves">Number of Hotel Reservation</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="city-option">
+                <mat-select placeholder="Where are you going?">
+                    @for (city of cities; track city) {
+                    <mat-option [value]="city.value">{{city.viewValue}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="calendar-field">
+                <input matInput [matDatepicker]="checkInPicker" placeholder="Check-in Date">
+                <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+                <mat-datepicker #checkInPicker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="calendar-field">
+                <input matInput [matDatepicker]="checkOutPicker" placeholder="Check-out Date">
+                <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
+                <mat-datepicker #checkOutPicker></mat-datepicker>
+            </mat-form-field>
+            
+            <button mat-fab extended class="search-hotel">
+                <mat-icon>search</mat-icon>
+                Search
+            </button>
+
+        </div>
+        <p class="special-offers">Special Offers & Events</p>
+        <div class="grid-container">
+            <div class="grid-item" *ngFor="let hotel of hotels">
+                <a href="/hotelprofile/" class="clickable">
+                    <div>
+                        <div class="hotel-photo">
+                            <img class="main-hotel-photo" [src]="hotel.imagePath" alt="Hotel Photo">
+                        </div>
+                        <div class="hotel-detail">
+                            <strong>Stars: </strong>{{ hotel.numstars }}<br>
+                            <strong>City: </strong>{{ hotel.city }}<br>
+                            <strong>Hotel Name: </strong>{{ hotel.name }}<br>
+                            <strong>Hotel Rate: </strong>{{ hotel.rating }}<br>
+                            <strong>Number of Reservation: </strong>{{ hotel.numreserve }}<br>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <footer class="bg-dark text-center text-white">
+
+            <div class="container p-4">
+
+                <section class="">
+                    <form action="">
+                        <!--Grid row-->
+                        <div class="row d-flex justify-content-center">
+
+                            <div class="col-auto">
+                                <p class="pt-2">
+                                    <strong>Sign up for our newsletter</strong>
+                                </p>
+                            </div>
+
+                            <div class="col-md-5 col-12">
+
+
+                            </div>
+
+                            <div class="col-auto">
+                                <!-- Submit button -->
+                                <button mdbRipple type="submit" class="btn btn-outline-light mb-4">
+                                    Subscribe
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </section>
+
+                <section class="mb-4">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                        eum harum corrupti dicta, aliquam sequi voluptate quas.
+                    </p>
+                </section>
+
+                <section class="">
+
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Links</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Links</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Links</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Links</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+
+        </footer>
+
+    </div>
+
+</body>

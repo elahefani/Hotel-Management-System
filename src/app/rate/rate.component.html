@@ -1,0 +1,26 @@
+<body>
+    <div class="main">
+        <form>
+            <div>
+                <label for="comment" style="color: #fff">Comment:</label>
+                <textarea id="comment" [(ngModel)]="userComment" name="comment" placeholder="Enter your comment here..."></textarea>
+                <label for="rating" style="color: #fff">Rating:</label>
+                <select id="rating" [(ngModel)]="userRating" name="rating">
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+            </div>
+            <button type="submit" (click)="submitRating()">Submit</button>
+        </form>
+    </div>
+    <div class="comments-section">
+        <h4>Comments</h4>
+        <div *ngFor="let comment of comments">
+            <p><strong>Rating:</strong> {{ comment.rating }} Stars</p>
+            <p><strong>Comment:</strong> {{ comment.text }}</p>
+        </div>
+    </div>
+</body>

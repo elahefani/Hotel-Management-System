@@ -1,0 +1,54 @@
+<body>
+    <div class="main">
+        <div class="contain-head">
+            <div class="left-head">
+                <p style="font-size: 25px; color: white; margin-left: 20px;">Booking Hotel</p>
+            </div>
+            <div class="center-head">
+                <nav class="navbar navbar-expand-sm">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home"><mat-icon>home</mat-icon> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><mat-icon>hotel</mat-icon>Rooms & Suites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/boxreserve"><mat-icon>inbox</mat-icon>Reservations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mailto:elahefani5@gmail.com" matTooltip="elahefani5@gmail.com" >
+                                <mat-icon>contact_support</mat-icon>Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="right-head">
+                <input class="styled-input" type="text" [(ngModel)]="userInput">
+                <button mat-fab extended class="search-hotel">
+                    <mat-icon>search</mat-icon>
+                    Search
+                </button>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item" *ngFor="let hotel of hotels">
+                <a href="/hotelprofile/" class="clickable">
+                    <div>
+                        <div class="hotel-photo">
+                            <img class="main-hotel-photo" [src]="hotel.imagePath" alt="Hotel Photo">
+                        </div>
+                        <div class="hotel-detail">
+                            <strong>Stars: </strong>{{ hotel.numstars }}<br>
+                            <strong>City: </strong>{{ hotel.city }}<br>
+                            <strong>Hotel Name: </strong>{{ hotel.name }}<br>
+                            <strong>Hotel Rate: </strong>{{ hotel.rating }}<br>
+                            <strong>Number of Reservation: </strong>{{ hotel.numreserve }}<br>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>

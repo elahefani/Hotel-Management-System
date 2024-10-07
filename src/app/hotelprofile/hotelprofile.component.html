@@ -1,0 +1,41 @@
+<body>
+    <div class="hotel-profile">
+        <nav class="navbar navbar-expand-sm">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/showhotel"><mat-icon>arrow_back</mat-icon></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/home"><mat-icon>home</mat-icon></a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+        <h1>{{ hotel.name }}</h1>
+        <p>{{ hotel.description }}</p>
+        <h3>Amenities</h3>
+        <ul class="amenities">
+            <li *ngFor="let amenity of hotel.amenities">{{ amenity }}</li>
+            <button type="submit" mat-fab extended class="comment-btn" (click)="goToRate()">
+                Comments
+            </button>
+        </ul>
+    </div>
+    
+    <mat-grid-list cols="3" rowHeight="250px">
+        <mat-grid-tile *ngFor="let room of rooms">
+            <a href="/reserve" class="clickable">
+                <div>
+                    <div class="hotel-photo">
+                        <img class="main-hotel-photo" [src]="room.imagePath" alt="Hotel Photo">
+                    </div>
+                    <div class="room-detail">
+                        <strong>Number of Bed: </strong>{{ room.numbed }}<br>
+                        <strong>Type of Room: </strong>{{ room.typeroom }}<br>
+                    </div>
+                </div>
+            </a>
+        </mat-grid-tile>
+    </mat-grid-list>
+</body>

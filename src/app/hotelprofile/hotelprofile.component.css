@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background: linear-gradient(to bottom, #847fba, #388293, #298f74);
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.reserve-hotel,
+.comment-btn {
+    margin: 10px;
+    background-color: unset;
+    border: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    color: white;
+    height: 50px;
+    width: 150px;
+    font-size: 16px;
+    align-self: right;
+    margin-top: 10px;
+
+}
+
+.navbar{
+    padding: 0;
+}
+
+.navbar .nav-link {
+    color: #ffffff;
+    font-size: 15px;
+}
+
+mat-icon {
+    font-size: 20px;
+    
+}
+
+.navbar .nav-link:hover {
+    color: rgba(153, 235, 239, 0.906);
+}
+
+.reserve-hotel{
+    height: 40px;
+}
+
+.reserve-hotel:hover {
+    border-color: rgba(153, 235, 239, 0.906);
+    color: rgba(153, 235, 239, 0.906);
+}
+
+.hotel-profile {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.hotel-profile img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.img-hotel-profile {
+    border-radius: 10px;
+    width: 300px;
+    margin: 20px;
+}
+
+h1 {
+    color: #d6d3d3;
+}
+
+h3 {
+    color: #d6d3d3;
+}
+
+p {
+    font-size: 16px;
+    color: #3c3c57;
+}
+
+.amenities {
+    list-style-type: none;
+    padding: 0;
+}
+
+.amenities li {
+    color: #0a0a38;
+    background-color: #8fc3c5;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.clickable {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+mat-grid-list {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+mat-grid-tile {
+    border: 5px hidden #ccc;
+}
+
+.main-hotel-photo {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 250px;
+    height: 150px;
+}
+
+.room-detail{
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    border: 1px solid #949494;
+    padding: 2px;
+    margin-bottom: 5px;
+}

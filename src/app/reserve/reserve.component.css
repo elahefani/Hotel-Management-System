@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.container{
+    display: grid;
+    margin-left: 550px;
+}
+
+.details-and-reserve{
+    position: fixed;
+    background: linear-gradient(to bottom, #847fba, #388293, #298f74);
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 550px;
+    height: 850px;
+    padding: 20px;
+}
+
+.album-rooms{
+    
+}
+
+.navbar{
+    padding: 0;
+}
+
+.navbar .nav-link {
+    color: #ffffff;
+    font-size: 15px;
+}
+
+mat-icon {
+    font-size: 20px;
+}
+
+.navbar .nav-link:hover {
+    color: rgba(153, 235, 239, 0.906);
+}
+
+.people-option {
+    margin-right: 16px; 
+}
+
+.room-details, .rules {
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.room-details h4, .rules h4 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.rules ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.calendar-field {
+    margin-right: 16px;
+}
+
+.button-hotel{
+    background-color:unset;
+    border: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    color: white;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    align-self: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.button-hotel:hover{
+    border-color: rgba(153, 235, 239, 0.906);
+    color: rgba(153, 235, 239, 0.906);
+}
+
+.main-hotel-photo {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    width: 400px;
+    height: auto;
+}
+
+mat-grid-list {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    gap: 10px;
+}
